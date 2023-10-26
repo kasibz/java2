@@ -1,9 +1,8 @@
 package shared;
 
-public class Person {
+public class Person extends Animal {
     public String firstName;
     public String lastName;
-    public int age;
     public int ssn;
     public static int count = 0;
 
@@ -12,23 +11,25 @@ public class Person {
     }
 
     public Person() {
+        this.age = -1;
         this.firstName = "";
         this.lastName = "";
-        this.age = -1;
+
         count++;
     }
 
     public Person(String firstName, String lastName) {
+        this.age = -1;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = -1;
         count++;
     }
 
     public Person(String firstName, String lastName, byte age, int ssn) {
+        this.age = (int) age;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age = (int) age;
+
         this.ssn = ssn;
         count++;
     }
