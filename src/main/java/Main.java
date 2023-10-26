@@ -2,8 +2,8 @@ import shared.*;
 
 public class Main {
     public static void main(String[] args) {
-        ex1();
-        // ex2();
+        // ex1();
+        ex2();
         // ex3();
         // ex4();
         // ex5();
@@ -26,7 +26,11 @@ public class Main {
     }
 
     private static void ex2() {
-        System.out.println("Todo...");
+        var dog = new Dog(5);
+        var cat = new Cat(4);
+        var p3 = new Person("Mary", "Jane", (byte) 12, 123456789);
+        System.out.println(p3);
+
     }
 
     private static void ex3() {
