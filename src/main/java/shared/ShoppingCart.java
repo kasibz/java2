@@ -50,7 +50,7 @@ public class ShoppingCart {
     }
 
     public String shipOrder(String name, String address, String city, String state, int zipCode) {
-        String label = String.format("Ship to:\n  %s\n  %s\n  %s, %s %d\n\n", name, address, city, state, zipCode);
+        Invoice invoice = new Invoice(name, address, city, state, zipCode);
         String itemHead = String.format("Items\n-----\n");
         String itemStr = "";
         for (Item item : items) {
@@ -60,7 +60,7 @@ public class ShoppingCart {
         if (this.total > 10.00)
             shipping = String.format("Shipping: $%.2f\n", this.shippingCharge);
         String totalSnippet = String.format("Total Cost\n---------\n$%.2f", this.total);
-        String result = String.format("%s%s%s\n%s\n%s", label, itemHead, itemStr, shipping, totalSnippet);
+        String result = String.format("%s%s%s\n%s\n%s", invoice, itemHead, itemStr, shipping, totalSnippet);
         return result;
     }
 }
